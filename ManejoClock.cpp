@@ -30,22 +30,36 @@ String TiempoActual(RTC_DS3231 &rtc){
     return dataString;
 }
 
+String TiempoActualPC(RTC_DS3231 &rtc){
+    DateTime now = rtc.now();
+    String dataString = "";
+    String stryear=String(now.year());
+    String strmonth=String(now.month());
+    String strday=String(now.day());
+    String strhour=String(now.hour());
+    String strminute=String(now.minute());
+    String strsecond=String(now.second());
+    dataString=stryear+";"+strmonth+";"+strday+";";
+    dataString+=strhour+";"+strminute+";"+strsecond;
+    return dataString;
+}
+
 uint32_t TiempoActualUnix(RTC_DS3231 &rtc){
   DateTime now = rtc.now();
   return now.unixtime();
 }
 uint32_t TiempoActualInt(RTC_DS3231 &rtc) {
 	DateTime now = rtc.now();
-	unsigned long year = now.year();
-	unsigned long month = now.month();
-	unsigned long day = now.day();
-	unsigned long  hour = now.hour();
-	unsigned long  minute = now.minute();
-	unsigned long second = now.second();
-	year *= 365 * 24 * 60 * 60;
-	month *= 31 * 24 * 60 * 60;
-	day *= 24 * 60 * 60;
-	hour *= 60 * 60;
-	minute *= 60;
-	return year+month+day+hour+minute+second;
+	unsigned long lyear = now.year();
+	unsigned long lmonth = now.month();
+	unsigned long lday = now.day();
+	unsigned long  lhour = now.hour();
+	unsigned long  lminute = now.minute();
+	unsigned long lsecond = now.second();
+	lyear *= 365 * 24 * 60 * 60;
+	lmonth *= 31 * 24 * 60 * 60;
+	lday *= 24 * 60 * 60;
+	lhour *= 60 * 60;
+	lminute *= 60;
+	return lyear+lmonth+lday+lhour+lminute+lsecond;
 }

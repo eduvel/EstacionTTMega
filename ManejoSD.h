@@ -4,21 +4,30 @@
 
 class Registro{
   public:
-  String dataString;
-  String sHumedadAmbiente;
-  String sTemperaturaAmbiente;
-  String sHumedadSuelo;
-  String sTemperaturaDS;
-  String sRadiacion;
-  String sSensorHidricoU;
-  String sSensorHidricoB;
-  String sSensorViento;
-  String sSensorLluvia;
-  
-  
+    String dataString;
+    String sHumedadAmbiente;
+    String sTemperaturaAmbiente;
+    String sHumedadSueloCH;
+    String sHumedadSuelo;
+    String sTemperaturaDS;
+    String sRadiacionV;
+    String sRadiacionGlobal;
+    String sSensorHidricoB;
+    String sSensorViento;
+    String sSensorLluvia;
+    String sSensorPH;
+ 
   String Cadena(){
-    return dataString+";"+sHumedadAmbiente+";"+sTemperaturaAmbiente+";"+sHumedadSuelo+";"+sTemperaturaDS+";"+sRadiacion+";"+sSensorHidricoU+";"+sSensorHidricoB+";"+sSensorViento+";"+sSensorLluvia;
-   
+    return dataString+";"+sHumedadAmbiente+";"+sTemperaturaAmbiente+";"+sHumedadSueloCH
+   +";"+sHumedadSuelo
+    +";"+sTemperaturaDS
+    +";"+sRadiacionV
+   +";"+sRadiacionGlobal
+    +";"+sSensorHidricoB
+    +";"+sSensorViento
+    +";"+sSensorLluvia
+    +";"+sTemperaturaDS
+    +";"+sSensorPH;
     }
   };
 

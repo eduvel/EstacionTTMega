@@ -12,7 +12,8 @@ void setup() {
 }
 
 void loop() {
- Serial.println(medicionSensores(10));
+  if(tiempoMedicion(10))
+    Serial.println(medicionSensores());
 }
 
 

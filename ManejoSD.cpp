@@ -17,25 +17,42 @@ void EscribirRegistro(Registro Dato){
       if (dataFile) {
         //dataFile.println("1,2,3,4");//Dato.Cadena());//dataString);
 
+    /*String dataString;
+    String sHumedadAmbiente;
+    String sTemperaturaAmbiente;
+    String sHumedadSueloCH;
+    String sHumedadSuelo;
+    String sTemperaturaDS;
+    String sRadiacionV;
+    String sRadiacionGlobal;
+    String sSensorHidricoB;
+    String sSensorViento;
+    String sSensorLluvia;
+    String sSensorPH;*/
+
         dataFile.print(Dato.dataString);
-        dataFile.print(",HA,");
+        dataFile.print(";HA;");
         dataFile.print(Dato.sHumedadAmbiente);
-        dataFile.print(",TA,");
+        dataFile.print(";TA;");
         dataFile.print(Dato.sTemperaturaAmbiente); 
-        dataFile.print(",HS,");
+        dataFile.print(";HSCH;");
+        dataFile.print(Dato.sHumedadSueloCH); 
+        dataFile.print(";HS;");
         dataFile.print(Dato.sHumedadSuelo); 
-        dataFile.print(",TDS,");
+        dataFile.print(";TDS;");
         dataFile.print(Dato.sTemperaturaDS);
-        dataFile.print(",RUV,");
-        dataFile.print(Dato.sRadiacion);
-        dataFile.print(",SHU,");
-        dataFile.print(Dato.sSensorHidricoU);
-        dataFile.print(",SHB,");
+        dataFile.print(";RUV;");
+        dataFile.print(Dato.sRadiacionV);
+        dataFile.print(";RUVG;");
+        dataFile.print(Dato.sRadiacionV);
+        dataFile.print(";SHB;");
         dataFile.print(Dato.sSensorHidricoB);
-        dataFile.print(",SVO,");
+        dataFile.print(";SVO;");
         dataFile.print(Dato.sSensorViento);
-        dataFile.print(",SLL,");
+        dataFile.print(";SLL;");
         dataFile.println(Dato.sSensorLluvia);
+        dataFile.print(";SPH;");
+        dataFile.println(Dato.sSensorPH);
         dataFile.close();
         // print to the serial port too:
         //Serial.println(Dato.Cadena());
