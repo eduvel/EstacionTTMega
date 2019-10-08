@@ -4,10 +4,9 @@
 class SensorDS18B20{
   public:
   SensorDS18B20(OneWire *oneWire);
-  String getTemperatura();
+  float getTemperatura();
   void InicioDS18B20();
   private:
   DallasTemperature sensors;
   OneWire *OneWireBus;
 };
-

@@ -78,11 +78,11 @@ void EscribirRegistro(Registro Dato){
 //      Serial.write('>');
 //};
 //
-//void BorrarSD(void){
-//       
-//       if (SD.exists(NombreArchivo))
-//       SD.remove(NombreArchivo);
-//       
-//       if (!SD.exists(NombreArchivo))
-//       Serial.print("K");
-//}
+void BorrarSD(void){
+       
+       if (SD.exists(NombreArchivo))
+       SD.remove(NombreArchivo);
+       
+       if (!SD.exists(NombreArchivo))
+       Serial.print("K");
+}

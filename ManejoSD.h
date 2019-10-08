@@ -17,14 +17,14 @@ class Registro{
   
   
   String Cadena(){
-    return dataString+","+sHumedadAmbiente+","+sTemperaturaAmbiente+","+sHumedadSuelo+","+sTemperaturaDS+","+sRadiacion+","+sSensorHidricoU+","+sSensorHidricoB+","+sSensorViento+","+sSensorLluvia;
+    return dataString+";"+sHumedadAmbiente+";"+sTemperaturaAmbiente+";"+sHumedadSuelo+";"+sTemperaturaDS+";"+sRadiacion+";"+sSensorHidricoU+";"+sSensorHidricoB+";"+sSensorViento+";"+sSensorLluvia;
    
     }
   };
 
  
  
-const int chipSelect = 10; //53 
+const int chipSelect = 53;
 /*
  ** MOSI - pin 11
  ** MISO - pin 12
@@ -36,4 +36,4 @@ const int chipSelect = 10; //53
 void InicioSD();
 void EscribirRegistro(Registro Dato);
 //void LeerRegistro(void);
-//void BorrarSD(void);
+void BorrarSD(void);
