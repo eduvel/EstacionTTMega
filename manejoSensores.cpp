@@ -97,7 +97,19 @@ String medicionSensores(){
     Dato.sSensorLluvia = fSensorLluvia;
     EscribirRegistro(Dato);
     Serial.println(F("registro escrito"));
-    return "";
+    return  Dato.dataString+";"+
+            Dato.sHumedadAmbiente+";"+
+            Dato.sTemperaturaAmbiente+";"+ 
+            Dato.sHumedadSueloCH+";"+
+            Dato.sHumedadSuelo+";"+
+            Dato.sTemperaturaDS+";"+
+            Dato.sRadiacionV+";"+
+            Dato.sRadiacionGlobal+";"+
+            Dato.sSensorHidricoB+";"+
+            Dato.sSensorViento+";"+
+            Dato.sSensorLluvia+";"+
+            Dato.sTemperaturaDS+";"+
+            Dato.sSensorPH;
   }
 
 float mapfloat( float x,float int_min, float int_max,float out_min,float out_max ) {
