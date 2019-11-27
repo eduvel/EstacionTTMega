@@ -44,5 +44,5 @@ const int chipSelect = 53;
 
 void InicioSD();
 void EscribirRegistro(Registro Dato);
-//void LeerRegistro(void);
+void LeerRegistro(void);
 void BorrarSD(void);

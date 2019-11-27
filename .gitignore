@@ -1,0 +1,11 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/EstacionTTMega/v16
+/Release
+/__vm
+/EstacionTTMega.sln
+/EstacionTTMega.vcxproj
+/EstacionTTMega.vcxproj.filters
+/EstacionTTMega.vcxproj.user

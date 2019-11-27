@@ -29,7 +29,7 @@ void inicioSensores(){
   digitalWrite(RFM95_CS, HIGH);
   pinMode(ActivacionSensorH, OUTPUT);
   digitalWrite(ActivacionSensorH, LOW);
-  Serial.begin(9600);
+  Serial.begin(19200);// 9600);
   Timer1.initialize(1000000);
   Timer1.attachInterrupt(Tic) ;
   pinMode(Anemometro,INPUT_PULLUP);
@@ -80,24 +80,24 @@ String medicionSensores(){
 
 
     Dato.dataString = HoraActual;
-    Dato.sHumedadAmbiente = fHumedadAmbiente;
-    Dato.sTemperaturaAmbiente = fTemperaturaAmbiente; 
-    Dato.sHumedadSueloCH = fHumedadSueloCH; 
-    Dato.sHumedadSuelo = fHumedadSuelo;
-    Dato.sTemperaturaDS = fTemperaturaDS;
-    Dato.sRadiacionV= fRadiacionV;
-    Dato.sRadiacionGlobal= fRadiacionGlobal;
-    Dato.sSensorHidricoB = fSensorHidricoB;
-    Dato.sSensorViento = fSensorViento;
-    Dato.sSensorLluvia = fSensorLluvia;
-    Dato.sTemperaturaDS = fTemperaturaDS;
-    Dato.sSensorPH=fSensorPH;
+    Dato.sHumedadAmbiente = String(fHumedadAmbiente);
+    Dato.sTemperaturaAmbiente = String(fTemperaturaAmbiente);
+    Dato.sHumedadSueloCH = String(fHumedadSueloCH);
+    Dato.sHumedadSuelo = String(fHumedadSuelo);
+    Dato.sTemperaturaDS = String(fTemperaturaDS);
+    Dato.sRadiacionV= String(fRadiacionV);
+    Dato.sRadiacionGlobal= String(fRadiacionGlobal);
+    Dato.sSensorHidricoB = String(fSensorHidricoB);
+    Dato.sSensorViento = String(fSensorViento);
+    Dato.sSensorLluvia = String(fSensorLluvia);
+    Dato.sTemperaturaDS = String(fTemperaturaDS);
+    Dato.sSensorPH= String(fSensorPH);
     fSensorLluvia=0;
 
-    Dato.sSensorLluvia = fSensorLluvia;
+    Dato.sSensorLluvia = String(fSensorLluvia);
     EscribirRegistro(Dato);
     Serial.println(F("registro escrito"));
-    return  Dato.dataString+";"+
+    /*return  Dato.dataString+";"+
             Dato.sHumedadAmbiente+";"+
             Dato.sTemperaturaAmbiente+";"+ 
             Dato.sHumedadSueloCH+";"+
@@ -109,7 +109,20 @@ String medicionSensores(){
             Dato.sSensorViento+";"+
             Dato.sSensorLluvia+";"+
             Dato.sTemperaturaDS+";"+
-            Dato.sSensorPH;
+            Dato.sSensorPH;*/
+
+    return  "{\"dataString\":\""+Dato.dataString+"\","+
+            "\"humedadAmbiente\":\""+Dato.sHumedadAmbiente+"\","+
+            "\"temperaturaAmbiente\":\""+Dato.sTemperaturaAmbiente+"\","+ 
+            "\"humedadSueloCH\":\""+Dato.sHumedadSueloCH+"\","+
+            "\"humedadSuelo\":\""+Dato.sHumedadSuelo+"\","+
+            "\"temperaturaDS\":\""+Dato.sTemperaturaDS+"\","+
+            "\"radiacionV\":\""+Dato.sRadiacionV+"\","+
+            "\"radiacionGlobal\":\""+Dato.sRadiacionGlobal+"\","+
+            "\"sensorHidricoB\":\""+Dato.sSensorHidricoB+"\","+
+            "\"sensorViento\":\""+Dato.sSensorViento+"\","+
+            "\"sensorLluvia\":\""+Dato.sSensorLluvia+"\","+
+            "\"sensorPH\":\""+Dato.sSensorPH+"\"}";
   }
 
 float mapfloat( float x,float int_min, float int_max,float out_min,float out_max ) {
