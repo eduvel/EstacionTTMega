@@ -47,7 +47,7 @@ void inicioSensores(){
 }
 boolean tiempoMedicion(uint16_t Ts){
   
-  TiempoUnix = TiempoActualInt(rtc);
+  TiempoUnix = TiempoActualUnix(rtc);
   if (TiempoUnix >= (TiempoUnixBase + Ts )) {
       TiempoUnixBase = TiempoUnix;
       return true;
@@ -57,7 +57,7 @@ boolean tiempoMedicion(uint16_t Ts){
   }
 boolean tiempoMedicionMillis(uint32_t Ts) {
 
-	TiempoMillis = TiempoActualInt(rtc);
+	TiempoMillis = millis();
 	if ((TiempoMillis - TiempoMillisBase) >= (Ts * 1000)) {
 		TiempoMillisBase = TiempoMillis;
 		return true;
