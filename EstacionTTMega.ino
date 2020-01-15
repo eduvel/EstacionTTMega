@@ -12,7 +12,7 @@ void setup() {
 }
 
 void loop() {
-  if(tiempoMedicion(900)){
+  if(tiempoMedicionMillis(900)){
     String tramaEnviar =medicionSensores();
     Serial.println(tramaEnviar);
 	moduloGPRS.enviarTramaMQTT(tramaEnviar);

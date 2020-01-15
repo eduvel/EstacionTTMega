@@ -15,6 +15,8 @@ float fSensorPH=7.0;
 int cViento;
 uint32_t TiempoUnixBase =0;
 uint32_t TiempoUnix=0;
+uint32_t TiempoMillisBase = 0;
+uint32_t TiempoMillis = 0;
 Registro Dato;
 
 // Inicializamos el sensor DHT11
@@ -53,6 +55,17 @@ boolean tiempoMedicion(uint16_t Ts){
     return false;
   
   }
+boolean tiempoMedicionMillis(uint32_t Ts) {
+
+	TiempoMillis = TiempoActualInt(rtc);
+	if ((TiempoMillis - TiempoMillisBase) >= (Ts * 1000)) {
+		TiempoMillisBase = TiempoMillis;
+		return true;
+	}
+	else
+		return false;
+
+}
 
 String medicionSensores(){
  

@@ -33,6 +33,7 @@
 #define SensorRadiacionV A6
 
 boolean tiempoMedicion(uint16_t Ts);
+boolean tiempoMedicionMillis(uint32_t Ts);
 void inicioSensores();
 String medicionSensores();
 float mapfloat( float x,float int_min, float int_max,float out_min,float out_max ) ;
